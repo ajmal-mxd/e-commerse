@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="prdct_details2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body style="background-color:  rgba(128, 128, 128, 0.425);">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand">Sneakers Zone</a>
+          <a href="bag.html"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+          </svg></a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="imgs">
+        <div class="simgs"><img src="airforce1.png" alt="" onmouseover="changeImage('airforce1.png')"></div>
+        <div class="simgs"><img src="airforce3.jpeg" alt=""onmouseover="changeImage('airforce3.jpeg')"></div>
+        <div class="simgs"><img src="airforce4.png" alt=""onmouseover="changeImage('airforce4.png')"></div>
+        <div class="simgs"><img src="airforce2.png" alt=""onmouseover="changeImage('airforce2.png')" ></div>
+      </div>
+      <div class="mainimg">
+        <img src="airforce2.png" alt="" id="zoom">
+      </div>
+      <div class="text">
+        <p>Nike Air Force 1 '07 LV8
+          Men's Shoes
+          MRP : ₹ 10 795.00
+          Inclusive of all taxes
+          (Also includes all applicable duties)</p>
+            <div class="add">
+              <button style="background-color: black; color: aliceblue; border-radius: 30px;" onclick="addToCart('Nike Air Force 1', 10795, 'airforce2.png')">Add to Cart</button>
+            </div>
+            <div class="fav">
+                <button style="border-radius: 30px; width: px;">favourite</button>
+            </div>
+      </div>
+      <script>
+      
+        // Change image on hover
+        function changeImage(smallImg) {
+            const mainImage = document.getElementById('zoom');
+            mainImage.src = smallImg;
+        }
+
+        // Add to cart function
+        function addToCart(name, price, image) {
+            // Retrieve existing cart from local storage or initialize an empty array
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the product is already in the cart, and if so, update the quantity
+            let productIndex = cart.findIndex(product => product.name === name);
+            if (productIndex !== -1) {
+                cart[productIndex].quantity += 1; // Increase quantity if the item already exists
+            } else {
+                // Add new product to the cart with quantity 1
+                let product = { name, price, image, quantity: 1 };
+                cart.push(product);
+            }
+
+            // Store the updated cart back in local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Confirm addition to the user
+            alert(`${name} has been added to your cart.`);
+        }
+    
+      
+
+
+      </script>
+    
+</body>
+</html>

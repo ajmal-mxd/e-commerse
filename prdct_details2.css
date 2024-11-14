@@ -1,0 +1,68 @@
+.imgs{
+    height:800px;
+    width: 200px;
+
+    display:grid;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 50px;
+
+}
+.simgs{
+    height: 150px;
+    width: 150px;
+    border: 1px solid rgba(128, 128, 128, 0.664);
+    border-radius: 10px;
+}
+img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.simgs :hover{
+    transform: scale(1.1);
+}
+.mainimg{
+    height: 750px;
+    width: 600px;
+    border: 1px solid rgba(128, 128, 128, 0.329);
+    margin-left: 300px;
+    margin-top: -800px;
+    border-radius: 10px;
+
+}
+.text{
+    height: 750px;
+    width: 300px;
+    margin-left: 920px;
+    margin-top: -750px;
+    border-radius: 10px;
+
+}
+.add{
+    height: 40px;
+    width: 180px;
+
+    text-align: center;
+    margin-top: 400px;
+    margin-left: 60px;
+    padding-top: 5px;
+}
+.add  :hover{
+    transform: scale(1.1);
+}
+.fav{
+    height: 40px;
+    width: 180px;
+     text-align: center;
+    margin-top: 10px;
+    margin-left: 60px;
+    padding-top: 5px;
+}
+.fav  :hover{
+    transform: scale(1.1);
+}
+svg{
+    margin-left: 1300px;
+    color: black;
+}
